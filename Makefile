@@ -7,19 +7,25 @@ all:
 down:
 	docker compose -f ./srcs/docker-compose.yml down
 
+stop:
+	docker compose -f ./srcs/docker-compose.yml stop
+
+start:
+	docker compose -f ./srcs/docker-compose.yml restart
+
 clean: down
-	docker system prune -af
 
 fclean: clean
-	docker volume rm srcs_mariadb srcs_wordpress
+	docker volume rm srcs_mariadb_volume srcs_wordpress_volume
 	sudo rm -rf /home/sydauria/data
+	docker system prune -af
 
 re: fclean all
 
 logs:
-	docker logs wordpress
-	docker logs mariadb
-	docker logs nginx
+	docker logs my_wordpress_container
+	docker logs my_mariadb_container
+	docker logs my_nginx_container
 	
 ls:
 	docker image ls

@@ -26,7 +26,6 @@ mysql -u root -p"$MYSQL_ROOT_PASSWORD" -e "CREATE DATABASE IF NOT EXISTS \`${MYS
 
 ###############################################################################
 ##--Create admin user and guest using docker secret files
-
 if mysql -u root -p"$MYSQL_ROOT_PASSWORD" -e "CREATE USER \`${ADMIN_USER}\` @'%' IDENTIFIED BY '${ADMIN_PASSWORD}';" ; then
 	echo "User ${ADMIN_USER} successfully created."
 else
