@@ -40,10 +40,10 @@ chown www-data:www-data /var/www/html/wordpress/wp-config.php
 
 fi
 
-mkdir -p /var/www/html/sydauria.42.com/public_html
-chown -R www-data:www-data /var/www/html/;
-mkdir -p /run/php;
-echo "<?php echo json_encode(['status' => 'healthy']); ?>" > /tmp/health_check.php
-chown www-data:www-data /tmp/health_check.php
-chmod 644 /tmp/health_check.php
-exec /usr/sbin/php-fpm7.3 -F -R
+# mkdir -p /var/www/html/sydauria.42.fr/public_html
+# chown -R www-data:www-data /var/www/html/
+# mkdir -p /run/php;
+# echo "<?php echo json_encode(['status' => 'healthy']); ?>" > /tmp/health_check.php
+# chown www-data:www-data /tmp/health_check.php
+# chmod 766 /tmp/health_check.php
+exec /usr/sbin/php-fpm7.4 -F -R
