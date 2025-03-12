@@ -8,7 +8,7 @@ RUN apt-get install -y openssl
 
 #generates a self-signed ssl/tls certificate and private key
 RUN mkdir -p /etc/nginx/ssl
-RUN openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout /etc/nginx/ssl/inception.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=jucheval.42.fr/UID=jucheval"
+RUN openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout /etc/nginx/ssl/inception.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=sydauria.42.fr/UID=sydauria"
 
 #stock data about nginx processus
 RUN mkdir -p /var/run/nginx
